@@ -72,6 +72,8 @@ print('5')
 numsfound = 0
 while cycletime < searchfield:
     if FullCheck(start) == True:
+        if start > searchfield:
+            break
         print(start)
         start = start + 1
         cycletime = cycletime + 1
