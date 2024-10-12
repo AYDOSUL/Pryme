@@ -1,4 +1,4 @@
-import math, random
+import math, random, time
 
 def TrialDivCheck(num):
 
@@ -65,22 +65,30 @@ def FullCheck(num):
 
 start = 6
 cycletime = 1
-searchfield = int(input('How many numbers do you want to search through? '))
+searchfield = int(input('Field of search for the program: '))
+maxtime = int(input('Maximum amount of time the program is allowed to run(s):'))
 print('2')
 print('3')
 print('5')
 numsfound = 0
+startclock = time.time()
 while cycletime < searchfield:
     if FullCheck(start) == True:
         if start > searchfield:
             break
-        print(start)
+        if (time.time() - startclock) > maxtime:
+            break
+        print(start, time.time() - startclock)
         start = start + 1
         cycletime = cycletime + 1
         numsfound = numsfound + 1
     else:
         start = start + 1
         cycletime = cycletime + 1
-
+endclock = time.time()
 print('Prime Numbers Found:')  
 print(numsfound + 3)  
+print('Largest Prime:')
+print(start)
+print('Elapsed time:')
+print(endclock-startclock)
