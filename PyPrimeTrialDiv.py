@@ -11,7 +11,7 @@ def TrialDivCheck(num):
                 return False
         return True
 
-#Rabin-Miller Primality written by Al Sweigart
+#Rabin-Miller Primality test
 def rabinMillerTest(num):
     # Returns True if num is a prime number.
     if num % 2 == 0 or num < 2:
